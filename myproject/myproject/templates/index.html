@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% load humanize %}
+{% block content %}
+
+<div class="row ">
+    <div class="col">
+        <div class="d-flex justify-content-center ">
+            <div class="alert alert-success col-md-3" role="alert" style="text-align: center; ">
+                <h4 class= "alert-heading">New Cases</h4>
+                <p>ผู้ติดเชื้อสะสมรายใหม่</p>
+                <hr>
+                <h2 class="mb-0">
+                    {% for new_cases in res %}
+                        ทั้งหมด {{ new_cases.new_case|intcomma }} ราย
+                    {% endfor %}
+                </h2>
+            </div> 
+            &nbsp;&nbsp;
+            <div class=" alert alert-warning col-md-3" role="alert" style="text-align: center;">
+                <h4 class=" alert-heading">All Cases</h4>
+                    <p>ผู้ติดเชื้อสะสมทั้งหมด</p>
+                    <hr>
+                    <h2 class="mb-0" ">
+                    {% for all_cases in res %}
+                    ทั้งหมด {{ all_cases.total_case|intcomma }} ราย
+                    {% endfor %}
+                </h2>
+            </div>
+            &nbsp;&nbsp;
+            <div class=" alert alert-danger col-md-3" role="alert" style="text-align: center;">
+                <h4 class=" alert-heading">All Deaths</h4>
+                    <p>ผู้เสียชีวิตทั้งหมด</p>
+                    <hr>
+                    <p class="mb-0" >
+                        API พังครับ จึงไม่สามารถแสดงข้อมูลส่วนนี้ได้
+                    <!-- {% for all_cases in res %}
+                    ทั้งหมด {{ all_cases.total_case|intcomma }} ราย
+                    {% endfor %} -->
+                </p>
+            </div>
+            <!-- <div class=" alert alert-danger col-md-3" role="alert" style="text-align: center;">
+                <h4 class=" alert-heading">All Death</h4>
+                    <p>ผู้เสียชีวิตทั้งหมด</p>
+                    <hr>
+                    <p class="mb-0" >
+                        
+                    {% for country in res %}
+                        {{ country.Deaths }}
+                    {% endfor %}
+                </p>
+            </div> -->
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class=" alert alert-dark col-md-4 text-center"  role="alert">
+                <i class="bi bi-exclamation-circle"></i> อัพเดตเมื่อวันที่ :
+                {% for lasted_date in res %}
+                {{ lasted_date.update_date }}
+                {% endfor %}
+            </div>
+        </div>
+        <!-- <div class="d-flex justify-content-center">
+            <div class=" alert alert-dark col-md-4 text-center"  role="alert">
+                อัพเดตล่าสุดเมื่อวันที่ :
+                {% for l_date in res %}
+                {{ l_date.txn_date }}
+                {% endfor %}
+            </div> -->
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

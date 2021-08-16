@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row justify-content-center" >
+    <div class="col-6">
+        <div class="card text-center " >
+            <div class="card-header" >
+                <h2>About Me :)</h2>
+            </div>
+            <div class="card-body">
+                <img src="{% static '/images/pro.png' %}" width="200" class="rounded mx-auto d-block" alt="profile">
+                <br>
+                <h5 class="card-title">สวัสดีครับผมชื่อ Pachara Detkhon</h5>
+                <p class="card-text">ได้เขียนเว็บไซต์นี้ขึ้นมาเพื่อได้ศึกษาเกี่ยวกับเว็บ และเผื่อนำไปเป็น Portfolio ครับ</p>
+                <p class="card-text">เว็บไซต์นี้เขียนด้วย Python Django Bootstrap</p>
+                <hr>
+                <h3>Source :)</h3>
+                <br>
+                <a href="https://covid19.ddc.moph.go.th/" class="btn btn-success"><i class="bi bi-share-fill"></i> API</a>
+                <a href="https://github.com/iamohmx" class="btn btn-dark"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://www.facebook.com/iamohmx" class="btn btn-primary"><i class="bi bi-facebook"></i> FaceBook</a>
+                <a href="https://www.instagram.com/iamohmx_/" class="btn btn-danger"><i class="bi bi-instagram"></i> Instagram</a>
+            </div>
+            <div class="card-footer text-muted">
+                &copy; Iamohmx Web Development 2021
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
